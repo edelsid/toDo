@@ -16,6 +16,16 @@ const operations = {
     localStorage.setItem('todos', JSON.stringify(newData));
     return newToDo;
   },
+  updateStatus: (toDo: toDoTypes): void => {
+    const data = operations.retrieveData();
+    const newToDo = {
+      id: toDo.id,
+      text: toDo.text,
+      done: !toDo.done,
+    };
+    const newData = data.map((item) => item.id === newToDo.id ? newToDo : item);
+    localStorage.setItem('todos', JSON.stringify(newData));
+  },
   deleteCompleted: (): void => {
     const data = operations.retrieveData();
     const newData = data.filter((item) => !item.done);
