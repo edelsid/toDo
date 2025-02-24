@@ -1,10 +1,16 @@
+import toDoTypes from "../types"
 import Task from "./Task"
 
-export default function Tasks() {
+interface TasksProps {
+  data: toDoTypes[],
+}
+
+export default function Tasks({ data } : TasksProps) {
   return (
     <ul className='tasks'>
-      <Task />
-      <Task />
+      {data.map((item: toDoTypes) => 
+        <Task key={item.id} data={item}/>
+      )}
     </ul>
   )
 }
