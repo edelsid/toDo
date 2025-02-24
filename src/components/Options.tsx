@@ -8,7 +8,7 @@ interface OptionsProps {
 export default function Options({ setFilter }: OptionsProps) {
   const [ active, setActive ] = useState<string>('all');
 
-  const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const button = e.target as HTMLInputElement;
     setActive(button.id);
     setFilter(button.id);

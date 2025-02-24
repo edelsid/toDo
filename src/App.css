@@ -79,6 +79,30 @@ button {
   font-family: 'Open Sans', serif;
   font-size: 1.8rem;
   position: relative;
+  color: darkgrey;
+}
+
+.input__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input__form::before, .task:is(.done)::before {
+  content: '';
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  left: 20px;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.input__form::before {
+  background-image: url('./assets/arrow.svg');
+  width: 20px;
+  opacity: 0.3;
 }
 
 .input::placeholder {
@@ -102,12 +126,8 @@ button {
 }
 
 .task:is(.done)::before {
-  content: '';
   background-image: url('./assets/done.svg');
   width: 24px;
-  aspect-ratio: 1 / 1;
-  position: absolute;
-  left: 20px;
 }
 
 .task:not(:last-child) {

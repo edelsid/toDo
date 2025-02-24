@@ -22,7 +22,7 @@ export default function Widget() {
 
   return (
     <div className='widget'>
-      <Header />
+      <Header setTasks={setTasks}/>
       <Tasks data={tasks}/>
       <Footer 
         counter={tasks.filter((item) => !item.done).length}
