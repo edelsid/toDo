@@ -1,9 +1,11 @@
+import Widget from './components/Widget'
 import './App.css'
 
 function App() {
   return (
     <>
-      Hello
+      <h1 className='title'>todos</h1>
+      <Widget />
     </>
   )
 }
