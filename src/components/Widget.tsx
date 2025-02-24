@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import toDoTypes from "../types"
 import operations from "../operations"
 import Header from "./Header"
@@ -7,12 +7,27 @@ import Footer from "./Footer"
 
 export default function Widget() {
   const [ tasks, setTasks ] = useState<toDoTypes[]>(operations.retrieveData());
+  const [ filter, setFilter ] = useState<string>('all');
+
+  useEffect(() => {
+    const taskArr = operations.retrieveData();
+    switch (filter) {
+      case 'active': setTasks(taskArr.filter((item) => !item.done));
+        break;
+      case 'completed': setTasks(taskArr.filter((item) => item.done));
+        break;
+      default: setTasks(taskArr);
+    };
+  }, [filter]);
 
   return (
     <div className='widget'>
       <Header />
       <Tasks data={tasks}/>
-      <Footer />
+      <Footer 
+        counter={tasks.filter((item) => !item.done).length}
+        setFilter={setFilter}
+      />
     </div>
   )
 }

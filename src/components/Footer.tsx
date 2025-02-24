@@ -1,12 +1,16 @@
-import Counter from "./Counter"
 import Options from "./Options"
 import Clear from "./Clear"
 
-export default function Footer() {
+interface FooterProps {
+  counter: number,
+  setFilter: (id: string) => void,
+}
+
+export default function Footer({ counter, setFilter } : FooterProps) {
   return (
     <footer className='options'>
-      <Counter />
-      <Options />
+      <span className='counter'>{counter} items left</span>
+      <Options setFilter={setFilter}/>
       <Clear />
     </footer>
   )
