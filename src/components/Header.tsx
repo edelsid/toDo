@@ -6,6 +6,7 @@ export default function Header() {
           className='input' 
           type='text'
           placeholder='What needs to be done?'
+          autoFocus={true}
         />
       </form>
     </header>
