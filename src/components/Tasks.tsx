@@ -7,7 +7,7 @@ interface TasksProps {
 
 export default function Tasks({ data } : TasksProps) {
   return (
-    <ul className='tasks'>
+    <ul className='tasks' data-testid="tasks-id">
       {data.map((item: toDoTypes) => 
         <Task key={item.id} data={item}/>
       )}

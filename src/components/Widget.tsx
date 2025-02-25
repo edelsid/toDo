@@ -27,6 +27,7 @@ export default function Widget() {
       <Footer 
         counter={tasks.filter((item) => !item.done).length}
         setFilter={setFilter}
+        setTasks={setTasks}
       />
     </div>
   )

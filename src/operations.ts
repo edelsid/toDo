@@ -23,7 +23,8 @@ const operations = {
       text: toDo.text,
       done: !toDo.done,
     };
-    const newData = data.map((item) => item.id === newToDo.id ? newToDo : item);
+    const newData = data.map((item) => 
+      item.id === newToDo.id ? newToDo : item);
     localStorage.setItem('todos', JSON.stringify(newData));
   },
   deleteCompleted: (): void => {

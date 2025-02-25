@@ -25,7 +25,7 @@ export default function Header({ setTasks }: HeaderProps) {
 
   const validateData = (text: string): string | undefined => {
     if (!text) return;
-    return text.trim();
+    if (text.trim() !== '') return text.trim();
   }
 
   return (
