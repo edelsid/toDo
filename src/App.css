@@ -13,10 +13,6 @@
   --padding: 0.9em 3.333em;
 }
 
-html {
-  font-size: 10px;
-}
-
 body {
   margin: 0;
   width: 100vw;
@@ -123,6 +119,7 @@ button {
 
 .task {
   padding: var(--padding);
+  word-break: break-word;
 }
 
 .task:is(.done) {
@@ -150,4 +147,44 @@ button {
 .active {
   border: 1px solid var(--accent-color);
   border-radius: var(--b-radius);
+}
+
+@media (min-width: 769px) {
+  html {
+    font-size: 10px;
+  }
+
+  .widget {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+
+  .widget {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .widget {
+    width: 90vw;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 3vw;
+  }
+
+  .input::placeholder {
+    font-size: 1.5rem;
+  }
 }

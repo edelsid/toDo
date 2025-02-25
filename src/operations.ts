@@ -8,7 +8,7 @@ const operations = {
   addData: (text: string): toDoTypes => {
     const data = operations.retrieveData();
     const newToDo = {
-      id: data.length + 1,
+      id: crypto.randomUUID(),
       text,
       done: false,
     };
