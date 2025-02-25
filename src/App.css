@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --b-radius: 5px;
+  --accent-color: #fdcbcb;
+  --ui-color: lightgray;
+  --border: 1px solid var(--ui-color);
+  --padding: 0.9em 3.333em;
+}
+
 html {
   font-size: 10px;
 }
@@ -23,12 +31,12 @@ body {
 }
 
 header {
-  border-bottom: 1px solid lightgray;
+  border-bottom: var(--border);
 }
 
 footer {
-  border-top: 1px solid lightgray;
-  padding: 15px 30px;
+  border-top: var(--border);
+  padding: 1.143em 2em;
   color: #7c7c7c;
   display: flex;
   justify-content: space-between;
@@ -49,7 +57,7 @@ button {
   font-weight: 400;
   font-size: 1.4rem;
   color: #7c7c7c;
-  padding: 4px 8px;
+  padding: 0.286em 0.57em;
   cursor: pointer;
 }
 
@@ -58,14 +66,14 @@ button {
   font-family: "Quicksand", serif;
   font-weight: 300;
   font-size: 8rem;
-  color: #fdcbcb;
+  color: var(--accent-color);
 }
 
 .widget {
   width: 60vw;
   background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 5px;
+  border: var(--border);
+  border-radius: var(--b-radius);
   box-shadow: 4px 4px 4px #0000001a;
 }
 
@@ -75,7 +83,7 @@ button {
 
 .input {
   border: 0;
-  padding: 20px 60px;
+  padding: var(--padding);
   font-family: 'Open Sans', serif;
   font-size: 1.8rem;
   position: relative;
@@ -92,7 +100,7 @@ button {
   content: '';
   aspect-ratio: 1 / 1;
   position: absolute;
-  left: 20px;
+  left: 1.111em;
   z-index: 2;
   background-repeat: no-repeat;
   background-position: center;
@@ -101,12 +109,12 @@ button {
 
 .input__form::before {
   background-image: url('./assets/arrow.svg');
-  width: 20px;
+  width: 1.111em;
   opacity: 0.3;
 }
 
 .input::placeholder {
-  color: lightgray;
+  color: var(--ui-color);
 }
 
 .tasks {
@@ -114,11 +122,11 @@ button {
 }
 
 .task {
-  padding: 20px 60px;
+  padding: var(--padding);
 }
 
 .task:is(.done) {
-  color: lightgray;
+  color: var(--ui-color);
   text-decoration: line-through;
   display: flex;
   align-items: center;
@@ -127,11 +135,11 @@ button {
 
 .task:is(.done)::before {
   background-image: url('./assets/done.svg');
-  width: 24px;
+  width: 1.333em;
 }
 
 .task:not(:last-child) {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--ui-color);
 }
 
 .options {
@@ -140,6 +148,6 @@ button {
 }
 
 .active {
-  border: 1px solid #fdcbcb;
-  border-radius: 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: var(--b-radius);
 }
