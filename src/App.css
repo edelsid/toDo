@@ -66,7 +66,6 @@ button {
 }
 
 .widget {
-  width: 60vw;
   background-color: white;
   border: var(--border);
   border-radius: var(--b-radius);
@@ -151,7 +150,6 @@ button {
 
 .error {
   display: block;
-  width: 100%;
   text-align: center;
   margin-top: 2.2rem;
   color: #fd5d5d;
@@ -162,7 +160,7 @@ button {
     font-size: 10px;
   }
 
-  .widget {
+  .widget, .error {
     width: 60vw;
   }
 }
@@ -172,13 +170,13 @@ button {
     font-size: 8px;
   }
 
-  .widget {
+  .widget, .error {
     width: 80vw;
   }
 }
 
 @media (max-width: 480px) {
-  .widget {
+  .widget, .error {
     width: 90vw;
   }
 
