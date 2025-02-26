@@ -26,7 +26,7 @@ export default function Header({ setTasks, handleError }: HeaderProps) {
         handleError('Oops! Looks like something went wrong');
       };
     } else {
-      handleError('We cant\'t create a task if the input is empty. Sorry!');
+      handleError('We can\'t create a task if the input is empty. Sorry!');
       return;
     }
     handleError(null);
