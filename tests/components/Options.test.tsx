@@ -3,10 +3,11 @@ import userEvent from '@testing-library/user-event'
 import Options from '../../src/components/Options';
 
 const setFilter = vi.fn();
+const handleError = vi.fn();
 
 describe('Options', () => {
   it('should fire filtering function', async () => {
-    render(<Options setFilter={setFilter}/>);
+    render(<Options setFilter={setFilter} handleError={handleError}/>);
     const allBtn = screen.getByRole('button', {name: /all/i});
     const activeBtn = screen.getByRole('button', {name: /active/i});
     const completedBtn = screen.getByRole('button', {name: /completed/i});

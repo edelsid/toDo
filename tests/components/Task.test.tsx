@@ -4,7 +4,7 @@ import Task from '../../src/components/Task'
 import mockData from '../mockData';
 
 beforeEach(() => {
-  render(<Task data={ mockData[0] } />);
+  render(<Task data={mockData[0]} setTasks={vi.fn()} handleError={vi.fn()}/>);
 });
 
 describe('Task', () => {

@@ -4,6 +4,7 @@ import mockData from '../mockData';
 
 const setFilter = vi.fn();
 const setTasks = vi.fn();
+const handleError = vi.fn();
 
 beforeEach(() => {
   setFilter.mockClear();
@@ -15,7 +16,8 @@ describe('Footer', () => {
     render(<Footer 
       counter={0} 
       setFilter={setFilter} 
-      setTasks={setTasks}/>
+      setTasks={setTasks}
+      handleError={handleError}/>
     );
     const counter = screen.getByText(/items left/i);
     expect(counter.textContent).toContain('0');
@@ -24,7 +26,8 @@ describe('Footer', () => {
     render(<Footer 
       counter={mockData.length} 
       setFilter={setFilter} 
-      setTasks={setTasks}/>
+      setTasks={setTasks}
+      handleError={handleError}/>
     );
     const counter = screen.getByText(/items left/i);
     expect(counter.textContent).toContain('2');

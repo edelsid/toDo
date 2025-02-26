@@ -149,6 +149,14 @@ button {
   border-radius: var(--b-radius);
 }
 
+.error {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 2.2rem;
+  color: #fd5d5d;
+}
+
 @media (min-width: 769px) {
   html {
     font-size: 10px;

@@ -3,10 +3,11 @@ import userEvent from '@testing-library/user-event';
 import Header from '../../src/components/Header'
 
 const setTasks = vi.fn();
+const handleError = vi.fn();
 
 beforeEach(() => {
   setTasks.mockClear();
-  render(<Header setTasks={setTasks}/>);
+  render(<Header setTasks={setTasks} handleError={handleError}/>);
 });
 
 describe('Tasks', () => {
